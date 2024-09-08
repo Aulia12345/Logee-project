@@ -1,0 +1,7 @@
+.default-label {
+    color: black; /* Warna label default */
+  }
+  
+  .active-label {
+    color: #ff5600 !important; /* Ganti dengan warna aktif, misalnya biru */
+  }

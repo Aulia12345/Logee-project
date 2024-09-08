@@ -1,0 +1,99 @@
+@font-face {
+    font-family: 'Satoshi Black';
+    src: url('../../assets/Satoshi_Complete/Fonts/OTF/Satoshi-Black.otf') format('opentype');
+    font-weight: 900;
+    font-style: normal;
+  }
+  
+  body {
+    font-family: 'Satoshi Black', sans-serif;
+  }
+
+  .ant-layout-header {
+    padding: 0;
+  }
+  
+
+.navbar{
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    padding: 0 2vw;
+}
+
+  .logo{
+    display: flex;
+    justify-content: space-between !important;
+    align-items: center;
+}
+
+.logeeLogo{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.logee{
+    padding-left: 20px;
+    width: 11.2rem;
+    height: 2.5rem;
+}
+
+.titik{
+    height: 2.5rem;
+    width: 3.5rem;
+}
+
+.profil, .judul{
+    display: flex;
+    align-items: center;
+}
+
+.profil{
+    display: flex;
+    align-items: center;
+    gap: 1.5vw;
+}
+
+.judul{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.judulLogo{
+    color: #FF5600; 
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.wa{
+    background-color: #F4F4F5;
+    border-radius: 100%;
+    padding: 5px;
+    width: 2rem;
+    height: 2rem;
+    margin-top: 20px;
+}
+
+.profilHeader{
+    display: flex;
+    gap: 30px;
+}
+
+.avatar{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #F4F4F5;
+    border-radius: 40%;
+    
+}
+
+.avaImg{
+        width: 2.5rem;
+        height: 2.5rem;
+}f
+
+.down{
+    width: 20px;
+    height: 20px;
+}
