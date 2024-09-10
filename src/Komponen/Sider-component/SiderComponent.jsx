@@ -1,19 +1,14 @@
 import React, { useState } from 'react';
-import {
-  MenuFoldOutlined,
-  MenuUnfoldOutlined,
-  UploadOutlined,
-  UserOutlined,
-  VideoCameraOutlined,
-} from '@ant-design/icons';
-import {book, wa, left} from '../../assets/Assets'
+import {book, wa, left, truck, price, person, right, bookA, priceA, personA, truckA} from '../../assets/Assets'
 import { Button, Layout, Menu, theme } from 'antd';
-import Katalog from '../../Pages/Katalog Pages/Katalog';
+import KontenKatalog from '../../Pages/Katalog Pages/Konten Katalog/KontenKatalog';
 const { Header, Sider, Content } = Layout;
 import { BrowserRouter as Router, Route, Routes, Link, useLocation } from 'react-router-dom';
 import Tes from '../../Pages/Tes/Tes';
 
 import './SiderComponent.css'
+import BreadcrumbComponent from '../Breadcrumbs/Breadcrumbs-component';
+import Katalog from '../Form/Form Katalog/Katalog';
 
 const SiderComponent = () => {
   const [collapsed, setCollapsed] = useState(false);
@@ -27,21 +22,41 @@ const SiderComponent = () => {
         key: '/',
         icon: (
           <img
-            src={isActive('/')? wa:book}
-            alt="Katalog Icon"
+            src={isActive('/')? truckA:truck}
+            alt="truck icon"
           />
         ),
-        label: <Link to="/" className={isActive('/') ? 'active-label' : 'default-label'}>Katalog</Link>,
+        label: <Link to="/" className={isActive('/') ? 'active-label' : 'default-label'}>Buat Pengiriman</Link>,
       },
     {
       key: '/tes',
       icon: (
         <img
-          src={isActive('/tes')? wa:book}
-          alt="Katalog Icon"
+          src={isActive('/tes')? bookA:book}
+          alt="book"
         />
       ),
-      label: <Link to="/tes" className={isActive('/tes') ? 'active-label' : 'default-label'}>Tes</Link>,
+      label: <Link to="/tes" className={isActive('/tes') ? 'active-label' : 'default-label'}>Daftar Pengiriman</Link>,
+    },
+    {
+      key: '/invoice',
+      icon: (
+        <img
+          src={isActive('/invoice')?priceA:price}
+          alt="book"
+        />
+      ),
+      label: <Link to="/invoice" className={isActive('/invoice') ? 'active-label' : 'default-label'}>Daftar Invoice</Link>,
+    },
+    {
+      key: '/akun',
+      icon: (
+        <img
+          src={isActive('/akun')? personA:person}
+          alt="book"
+        />
+      ),
+      label: <Link to="/akun" className={isActive('/akun') ? 'active-label' : 'default-label'}>Akun</Link>,
     },
   ];
 
@@ -70,7 +85,7 @@ const SiderComponent = () => {
           }}
         >
           <Button
-            icon={collapsed ? <img src={left}/> : <img src={left}/>}
+            icon={collapsed ? <img src={right}/> : <img src={left}/>}
             onClick={() => setCollapsed(!collapsed)}
             style={{
               fontSize: '20px',
@@ -82,17 +97,16 @@ const SiderComponent = () => {
             }}
           />
         </Header>
-        <Content
-          style={{
-            minHeight: '100vh',
-            background: 'white',
-          }}
-        >
-          <Routes>
-        <Route path="/" element={<Katalog />} />
+        <Content style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+      <BreadcrumbComponent />
+      
+      <Katalog /> {/* Form */}
+      
+      <Routes>
+        <Route path="/" element={<KontenKatalog />} /> {/* Konten Katalog */}
         <Route path="/tes" element={<Tes />} />
       </Routes>
-        </Content>
+    </Content>
       </Layout>
         </Layout>
       

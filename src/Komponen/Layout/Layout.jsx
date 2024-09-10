@@ -3,6 +3,7 @@ import { Layout } from "antd";
 import HeaderComponent from "../Header-component/HeaderComponent";
 import SiderComponent from "../Sider-component/SiderComponent";
 import "./layout.css";
+import Katalog from "../Form/Form Katalog/Katalog";
 
 const LayoutComponent = ({ children }) => {
   const { Content } = Layout;
@@ -12,6 +13,7 @@ const LayoutComponent = ({ children }) => {
       {/* Sider berada di samping kiri */}
      <HeaderComponent/>
       <SiderComponent />
+  
     
     </Layout>
   );

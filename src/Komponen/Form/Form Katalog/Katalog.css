@@ -1,0 +1,187 @@
+@font-face {
+  font-family: 'Satoshi Black';
+  src: url('../../../assets/Satoshi_Complete/Fonts/WEB/fonts/Satoshi-Medium.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+.katalog {
+  position: relative;
+  display: inline-block;
+  font-family: 'Satoshi Black', sans-serif;
+  width: 100%; /* Mengambil 100% lebar dari parent container */
+}
+
+.img {
+  width: 95vw;
+  height: auto;
+  position: relative;
+  z-index: 1;
+}
+
+.judulArmada {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 2rem;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  letter-spacing: 2px;
+  font-family: 'Satoshi Black', sans-serif;
+  z-index: 2;
+}
+
+/* Flexbox untuk form */
+.formContainer {
+  position: absolute;
+  top: 20vw;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: row;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  max-width: fit-content;
+  border-radius: 6px;
+  z-index: 3;
+  background-color: white;
+  max-height: 100%;
+}
+
+.inputGroup, .radio {
+  border: 2px solid transparent;
+  background: linear-gradient(white, white) padding-box,
+    linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)) border-box;
+  padding: 1.5vw;
+  border-width: thin;
+
+}
+
+.inputGroup{
+  width: 17vw;
+}
+
+.asal {
+  border-radius: 6px 0px 0px 6px;
+}
+
+.input {
+  margin-left: 5px;
+  border: none;
+  max-width: 10vw;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+}
+
+.dropdownT {
+  color: black;
+}
+
+.button {
+  background: #ff5600;
+  border: none;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+  color: white;
+  padding: 0 2vw;
+  width: 13vw;
+}
+
+.button:hover {
+  background: #ff9a66;
+  cursor: pointer;
+}
+
+.rekom {
+  border: none;
+  max-width: 100%;
+}
+
+.rekom:hover {
+  color: #ff5600 !important;
+}
+
+.judulRekom{
+  text-align: center;
+}
+
+.radio{
+width: 31vw;
+font-weight: bold;
+}
+
+.custom-radio .ant-radio-input:checked ~ .ant-radio-inner {
+  background-color: #ff5600 !important; /* Latar belakang radio yang dipilih */
+  border-color: #ff5600 !important; /* Border radio yang dipilih */
+}
+
+.custom-radio .ant-radio-input:checked ~ .ant-radio-inner::after {
+  background-color: #ff5600 !important; /* Latar belakang lingkaran dalam radio yang dipilih */
+}
+
+.buttonRadio{
+  display: flex;
+  justify-content: end;
+}
+
+.buttonRadioBack{
+  border-color: #ff5600;
+  color: #ff5600;
+  width: 8vw;
+}
+
+.buttonRadioSubmit{
+  background-color: #ff5600;
+  color: white;
+  width: 8vw;
+}
+
+/* Media Queries untuk Responsif */
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .img {
+    width: 90vw;
+  }
+  .judulArmada {
+    font-size: 2rem;
+  }
+  .formContainer {
+    top: 25vw;
+    flex-direction: row;
+  }
+  .inputGroup {
+    width: 20vw;
+  }
+  .button {
+    width: 15vw;
+  }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .img {
+    width: 100vw;
+  }
+  .judulArmada {
+    font-size: 1.5rem;
+  }
+  .formContainer {
+    top: 40vw;
+    flex-direction: column;
+    width: 80vw;
+  }
+  .inputGroup {
+    width: 100%;
+  }
+  .button {
+    width: 100%;
+  }
+  .input {
+    max-width: 100%;
+  }
+}
