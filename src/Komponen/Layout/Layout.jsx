@@ -2,7 +2,7 @@ import React from "react";
 import { Layout } from "antd";
 import HeaderComponent from "../Header-component/HeaderComponent";
 import SiderComponent from "../Sider-component/SiderComponent";
-import "./layout.css";
+import "./  Layout.css";
 import Katalog from "../Form/Form Katalog/Katalog";
 
 const LayoutComponent = ({ children }) => {
