@@ -15,7 +15,7 @@ import personA from './img/person-oren.png';
 import priceA from './img/price-oren.png';
 import truckA from './img/truck-oren.png';
 import truckIcon from './img/truck.png';
-import img from './img/img.png';
+import img from './img/IMG.png';
 import map from './img/map-pin.png';
 import star from './img/star.png';
 import img2 from './img/img2.png';
