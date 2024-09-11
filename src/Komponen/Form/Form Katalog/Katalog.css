@@ -9,13 +9,12 @@
   position: relative;
   display: inline-block;
   font-family: 'Satoshi Black', sans-serif;
-  width: 100%; /* Mengambil 100% lebar dari parent container */
+  width: 100%;
 }
 
 .img {
   width: 95vw;
   height: auto;
-  position: relative;
   z-index: 1;
 }
 
@@ -29,11 +28,10 @@
   text-align: center;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   letter-spacing: 2px;
-  font-family: 'Satoshi Black', sans-serif;
   z-index: 2;
 }
 
-/* Flexbox untuk form */
+/* Form Styling */
 .formContainer {
   position: absolute;
   top: 20vw;
@@ -42,28 +40,30 @@
   display: flex;
   flex-direction: row;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  max-width: fit-content;
+  background-color: white;
   border-radius: 6px;
   z-index: 3;
-  background-color: white;
-  max-height: 100%;
+  max-width: fit-content;
 }
 
-.inputGroup, .radio {
+.inputContainer{
+  margin-top: 10px;
+}
+
+.inputGroup,
+.radio {
   border: 2px solid transparent;
   background: linear-gradient(white, white) padding-box,
     linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)) border-box;
   padding: 1.5vw;
-  border-width: thin;
-
 }
 
-.inputGroup{
+.inputGroup {
   width: 17vw;
 }
 
 .asal {
-  border-radius: 6px 0px 0px 6px;
+  border-radius: 6px 0 0 6px;
 }
 
 .input {
@@ -89,58 +89,58 @@
   color: white;
   padding: 0 2vw;
   width: 13vw;
+  cursor: pointer;
 }
 
 .button:hover {
   background: #ff9a66;
-  cursor: pointer;
 }
 
 .rekom {
   border: none;
-  max-width: 100%;
+  width: 100%;
 }
 
 .rekom:hover {
   color: #ff5600 !important;
 }
 
-.judulRekom{
+.judulRekom {
   text-align: center;
 }
 
-.radio{
-width: 31vw;
-font-weight: bold;
+.radio {
+  width: 31vw;
+  font-weight: bold;
 }
 
-.custom-radio .ant-radio-input:checked ~ .ant-radio-inner {
-  background-color: #ff5600 !important; /* Latar belakang radio yang dipilih */
-  border-color: #ff5600 !important; /* Border radio yang dipilih */
-}
-
+.custom-radio .ant-radio-input:checked ~ .ant-radio-inner,
 .custom-radio .ant-radio-input:checked ~ .ant-radio-inner::after {
-  background-color: #ff5600 !important; /* Latar belakang lingkaran dalam radio yang dipilih */
+  background-color: #ff5600 !important;
+  border-color: #ff5600 !important;
 }
 
-.buttonRadio{
+.buttonRadio {
   display: flex;
   justify-content: end;
 }
 
-.buttonRadioBack{
+.buttonRadioBack,
+.buttonRadioSubmit {
+  width: 8vw;
+}
+
+.buttonRadioBack {
   border-color: #ff5600;
   color: #ff5600;
-  width: 8vw;
 }
 
-.buttonRadioSubmit{
+.buttonRadioSubmit {
   background-color: #ff5600;
   color: white;
-  width: 8vw;
 }
 
-/* Media Queries untuk Responsif */
+/* Responsive Styling */
 
 /* Tablet */
 @media (min-width: 768px) and (max-width: 1023px) {
@@ -152,7 +152,6 @@ font-weight: bold;
   }
   .formContainer {
     top: 25vw;
-    flex-direction: row;
   }
   .inputGroup {
     width: 20vw;
@@ -178,10 +177,8 @@ font-weight: bold;
   .inputGroup {
     width: 100%;
   }
-  .button {
-    width: 100%;
-  }
+  .button,
   .input {
-    max-width: 100%;
+    width: 100%;
   }
 }

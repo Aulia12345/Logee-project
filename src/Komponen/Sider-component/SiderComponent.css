@@ -1,7 +1,54 @@
+
+/* Active label class for the selected menu item */
+.active-label {
+  font-weight: bold;
+  color: #ff5600; /* Warna khusus untuk yang aktif */
+}
+
+/* Default label class for non-active menu items */
 .default-label {
-    color: black; /* Warna label default */
-  }
-  
-  .active-label {
-    color: #ff5600 !important; /* Ganti dengan warna aktif, misalnya biru */
-  }
+  font-weight: normal;
+  color: #000000; /* Warna standar untuk item yang tidak aktif */
+}
+
+/* Style for the Sider layout button */
+.sider-toggle-button {
+  font-size: 20px;
+  border: solid;
+  border-radius: 100%;
+  border-width: 1px;
+  border-color: rgba(187, 187, 187, 0.3);
+  margin-left: -1vw;
+  background-color: white; /* Pastikan latar belakang tetap putih */
+}
+
+/* Style for the Sider menu */
+.sider-menu {
+  background-color: white;
+  height: 100%;
+  width: 14.7vw;
+}
+
+/* Styling for the layout header */
+.layout-header {
+  padding: 0;
+  background-color: white;
+}
+
+/* Style for the layout content */
+.layout-content {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Style for the menu icons */
+.menu-icon {
+  width: 24px; /* Customize the width of the icons */
+  height: 24px;
+}
+
+/* Breadcrumb container */
+.breadcrumb-container {
+  margin-bottom: 20px; /* Provide spacing between breadcrumb and content */
+}

@@ -19,9 +19,10 @@ import img from './img/img.png';
 import map from './img/map-pin.png';
 import star from './img/star.png';
 import img2 from './img/img2.png';
-import chat from './img/chat.png'
+import chat from './img/chat.png';
+import starfilled from './img/starfilled.png'
 
 
 export {titik, logo,arrow, wa, down, avatar, book, left, right, person, price, truck, bookA, personA, priceA, truckA
-    ,truckIcon,img, map, star, img2, chat
+    ,truckIcon,img, map, star, img2, chat, starfilled
 }

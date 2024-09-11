@@ -9,6 +9,7 @@ import Tes from '../../Pages/Tes/Tes';
 import './SiderComponent.css'
 import BreadcrumbComponent from '../Breadcrumbs/Breadcrumbs-component';
 import Katalog from '../Form/Form Katalog/Katalog';
+import TabelKatalog from '../../Pages/Katalog Pages/Tabel Katalog/TabelKatalog';
 
 const SiderComponent = () => {
   const [collapsed, setCollapsed] = useState(false);
@@ -29,14 +30,14 @@ const SiderComponent = () => {
         label: <Link to="/" className={isActive('/') ? 'active-label' : 'default-label'}>Buat Pengiriman</Link>,
       },
     {
-      key: '/tes',
+      key: '/tabel-katalog',
       icon: (
         <img
-          src={isActive('/tes')? bookA:book}
+          src={isActive('/tabel-katalog')? bookA:book}
           alt="book"
         />
       ),
-      label: <Link to="/tes" className={isActive('/tes') ? 'active-label' : 'default-label'}>Daftar Pengiriman</Link>,
+      label: <Link to='/tabel-katalog' className={isActive('/tabel-katalog') ? 'active-label' : 'default-label'}>Daftar Pengiriman</Link>,
     },
     {
       key: '/invoice',
@@ -63,52 +64,34 @@ const SiderComponent = () => {
   return (
    
 <Layout>
-      <Sider trigger={null} collapsible collapsed={collapsed}>
-        <div className="demo-logo-vertical" />
-        <Menu
-        style={{
-            background:'white',
-            height:'100%'
-        }}
-          theme="light"
-          mode="inline"
-          selectedKeys={[location.pathname === '/']} // Highlight the current route
-          items={menuItems} // Use items instead of children
-        />
-        </Sider>
+  <Sider trigger={null} collapsible collapsed={collapsed}>
+    <Menu
+      className="sider-menu"
+      theme="light"
+      mode="inline"
+      selectedKeys={[location.pathname === '/']} // Highlight the current route
+      items={menuItems} // Use items instead of children
+    />
+  </Sider>
 
-        <Layout>
-        <Header
-          style={{
-            padding: 0,
-            background: 'white',
-          }}
-        >
-          <Button
-            icon={collapsed ? <img src={right}/> : <img src={left}/>}
-            onClick={() => setCollapsed(!collapsed)}
-            style={{
-              fontSize: '20px',
-              border:'solid',
-              borderRadius: '100%',
-              borderWidth: 1,
-              borderColor:'rgb(187, 187, 187, 0.3)',
-              marginLeft:'-1vw',
-            }}
-          />
-        </Header>
-        <Content style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
-      <BreadcrumbComponent />
-      
+  <Layout>
+    <Header className="layout-header">
+      <Button
+        className="sider-toggle-button"
+        icon={collapsed ? <img src={right} /> : <img src={left} />}
+        onClick={() => setCollapsed(!collapsed)}
+      />
+    </Header>
+    <Content className="layout-content">
+      <BreadcrumbComponent className="breadcrumb-container" />
       <Katalog /> {/* Form */}
-      
       <Routes>
         <Route path="/" element={<KontenKatalog />} /> {/* Konten Katalog */}
-        <Route path="/tes" element={<Tes />} />
+        <Route path="/tabel-katalog" element={<TabelKatalog />} />
       </Routes>
     </Content>
-      </Layout>
-        </Layout>
+  </Layout>
+</Layout>
       
   );
 };

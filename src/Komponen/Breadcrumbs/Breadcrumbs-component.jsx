@@ -10,7 +10,7 @@ const breadcrumbConfig = {
     text: 'Buat Pengiriman / Cari Armada Pengiriman',
     logo: truck,
   },
-  '/tes': {
+  '/tabel-katalog': {
     text: 'Daftar Pengiriman / Buat Daftar Pengiriman',
     logo: book,
   },

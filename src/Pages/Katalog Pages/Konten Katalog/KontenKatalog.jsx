@@ -8,7 +8,7 @@ const KontenKatalog =()=>{
 
 return(
     <div className="kontenKatalog">
-        <h1>Pilih Armada Pengiriman</h1>
+        <h1 className="JUDUL">PILIH ARMADA PENGIRIMAN</h1>
         <div className="isiKonten">
         <img src={img2} alt="" />
         <h2 className="h2">Ayo Temukan Armada Terbaikmu</h2>

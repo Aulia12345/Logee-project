@@ -1,0 +1,146 @@
+@font-face {
+    font-family: 'Satoshi Black';
+    src: url('../../../assets/Satoshi_Complete/Fonts/WEB/fonts/Satoshi-Black.ttf') format('truetype');
+  }
+  
+  @font-face {
+    font-family: "Satoshi Light";
+    src: url('../../../assets/Satoshi_Complete/Fonts/WEB/fonts/Satoshi-Light.ttf') format('truetype');
+  }
+  
+  .tabelKatalog {
+    background: white;
+    padding: 8vw 0 0 2vw;
+  }
+
+  .h1Card{
+    font-size: 1.5rem;
+  }
+  
+  .Card:hover {
+    background-color: #FF6F261A;
+    cursor: pointer;
+  }
+  
+  .cardC {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: "Satoshi Light", sans-serif;
+    flex-wrap: wrap;
+  }
+  
+  .Title {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .title {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  }
+  
+  .title1 {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .pTitle1 {
+    font-size: 1.2rem;
+  }
+  
+  .pTitle1-2 {
+    color: #006AAB;
+    font-size: 0.7rem;
+  }
+  
+  .subTitle {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .title2 {
+    color: #A0A0AB;
+    font-size: 0.7rem;
+    opacity: 0.8;
+    font-weight: 400;
+  }
+  
+  .pTitle2 {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.9rem;
+  }
+  
+  .pTitle2-2 {
+    color: #A0A0AB;
+    opacity: 0.8;
+  }
+  
+  .priceTitle {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 84px;
+    text-align: center;
+    width: min-content;
+    font-family: "Satoshi Light", sans-serif;
+  }
+  
+  .CardB {
+    display: flex;
+    justify-content: end;
+  }
+  
+  .CardButton {
+    background-color: #ff5600;
+    color: white;
+    padding: 1.5vw 2vw;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 1024px) {
+    .cardC {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .priceTitle {
+      text-align: left;
+      font-size: 20px;
+      line-height: 48px;
+    }
+  
+    .CardButton {
+      padding: 2vw 4vw;
+      font-size: 1rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .tabelKatalog {
+      padding: 4vw 0 0 4vw;
+    }
+  
+    .pTitle1 {
+      font-size: 1rem;
+    }
+  
+    .priceTitle {
+      font-size: 18px;
+      line-height: 36px;
+    }
+  
+    .pTitle1-2, .title2, .pTitle2-2 {
+      font-size: 0.6rem;
+    }
+  
+    .CardButton {
+      padding: 3vw 5vw;
+      font-size: 0.9rem;
+    }
+  }
+  
