@@ -43,7 +43,6 @@
   background-color: white;
   border-radius: 6px;
   z-index: 3;
-  max-width: fit-content;
 }
 
 .inputContainer{
@@ -150,8 +149,9 @@
   .judulArmada {
     font-size: 2rem;
   }
-  .formContainer {
-    top: 25vw;
+
+  .formContainer{
+    left: 50vw;
   }
   .inputGroup {
     width: 20vw;
@@ -173,6 +173,7 @@
     top: 40vw;
     flex-direction: column;
     width: 80vw;
+    left: 45vw;
   }
   .inputGroup {
     width: 100%;
