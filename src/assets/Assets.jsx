@@ -1,5 +1,5 @@
 import titik from './img/titik.png';
-import logo from './img/Logo.png';
+import logo from './img/logo.png';
 import arrow from './img/arrow.png';
 import wa from './img/wa.png';
 import down from './img/down.png';
