@@ -1,98 +1,82 @@
 import React, { useState } from 'react';
-import {book, wa, left, truck, price, person, right, bookA, priceA, personA, truckA} from '../../assets/Assets'
-import { Button, Layout, Menu, theme } from 'antd';
-import KontenKatalog from '../../Pages/Katalog Pages/Konten Katalog/KontenKatalog';
-const { Header, Sider, Content } = Layout;
-import { BrowserRouter as Router, Route, Routes, Link, useLocation } from 'react-router-dom';
-import Tes from '../../Pages/Tes/Tes';
+import { book, truck, price, person, left, right, bookA, truckA, priceA, personA } from '../../assets/Assets';
+import { Button, Layout, Menu } from 'antd';
+import { Link, useLocation, Routes, Route } from 'react-router-dom';
 
-import './SiderComponent.css'
+import './SiderComponent.css';
 import BreadcrumbComponent from '../Breadcrumbs/Breadcrumbs-component';
 import Katalog from '../Form/Form Katalog/Katalog';
+import KontenKatalog from '../../Pages/Katalog Pages/Konten Katalog/KontenKatalog';
 import TabelKatalog from '../../Pages/Katalog Pages/Tabel Katalog/TabelKatalog';
+import DetailInformasi from '../../Pages/Detail Informasi/DetailInformasi';
+import DetailPage from '../../Pages/Detail Informasi/DetailPage';
+
+const { Header, Sider, Content } = Layout;
 
 const SiderComponent = () => {
   const [collapsed, setCollapsed] = useState(false);
-  const location = useLocation(); // Mengambil URL aktif
+  const location = useLocation();
 
-  // Helper function untuk menentukan apakah path aktif
+  // Helper function to determine if a path is active
   const isActive = (path) => location.pathname === path;
 
+  // Menu items
   const menuItems = [
     {
-        key: '/',
-        icon: (
-          <img
-            src={isActive('/')? truckA:truck}
-            alt="truck icon"
-          />
-        ),
-        label: <Link to="/" className={isActive('/') ? 'active-label' : 'default-label'}>Buat Pengiriman</Link>,
-      },
-    {
-      key: '/tabel-katalog',
-      icon: (
-        <img
-          src={isActive('/tabel-katalog')? bookA:book}
-          alt="book"
-        />
-      ),
-      label: <Link to='/tabel-katalog' className={isActive('/tabel-katalog') ? 'active-label' : 'default-label'}>Daftar Pengiriman</Link>,
+      key: '/',
+      icon: <img src={isActive('/') ? truckA : truck} alt="truck icon" />,
+      label: <Link to="/" className={isActive('/') ? 'active-label' : 'default-label'}>Buat Pengiriman</Link>,
     },
     {
-      key: '/invoice',
-      icon: (
-        <img
-          src={isActive('/invoice')?priceA:price}
-          alt="book"
-        />
-      ),
-      label: <Link to="/invoice" className={isActive('/invoice') ? 'active-label' : 'default-label'}>Daftar Invoice</Link>,
+      key: '/tabel-katalog',
+      icon: <img src={isActive('/tabel-katalog') ? bookA : book} alt="book" />,
+      label: <Link to="/tabel-katalog" className={isActive('/tabel-katalog') ? 'active-label' : 'default-label'}>Daftar Pengiriman</Link>,
+    },
+    {
+      key: '/detail-informasi',
+      icon: <img src={isActive('/detail-informasi') ? priceA : price} alt="invoice" />,
+      label: <Link to="/detail-informasi" className={isActive('/detail-informasi') ? 'active-label' : 'default-label'}>Daftar Invoice</Link>,
     },
     {
       key: '/akun',
-      icon: (
-        <img
-          src={isActive('/akun')? personA:person}
-          alt="book"
-        />
-      ),
+      icon: <img src={isActive('/akun') ? personA : person} alt="account" />,
       label: <Link to="/akun" className={isActive('/akun') ? 'active-label' : 'default-label'}>Akun</Link>,
     },
   ];
 
   return (
-   
-<Layout>
-  <Sider trigger={null} collapsible collapsed={collapsed}>
-    <Menu
-      className="sider-menu"
-      theme="light"
-      mode="inline"
-      selectedKeys={[location.pathname === '/']} // Highlight the current route
-      items={menuItems} // Use items instead of children
-    />
-  </Sider>
+    <Layout>
+      <Sider trigger={null} collapsible collapsed={collapsed}>
+        <Menu
+          className="sider-menu"
+          theme="light"
+          mode="inline"
+          selectedKeys={[location.pathname]} // Highlight the current route
+          items={menuItems}
+        />
+      </Sider>
 
-  <Layout>
-    <Header className="layout-header">
-      <Button
-        className="sider-toggle-button"
-        icon={collapsed ? <img src={right} /> : <img src={left} />}
-        onClick={() => setCollapsed(!collapsed)}
-      />
-    </Header>
-    <Content className="layout-content">
-      <BreadcrumbComponent className="breadcrumb-container" />
-      <Katalog /> {/* Form */}
-      <Routes>
-        <Route path="/" element={<KontenKatalog />} /> {/* Konten Katalog */}
-        <Route path="/tabel-katalog" element={<TabelKatalog />} />
-      </Routes>
-    </Content>
-  </Layout>
-</Layout>
-      
+      <Layout>
+        <Header className="layout-header">
+          <Button
+            className="sider-toggle-button"
+            icon={collapsed ? <img src={right} alt="Expand" /> : <img src={left} alt="Collapse" />}
+            onClick={() => setCollapsed(!collapsed)}
+          />
+        </Header>
+        <Content className="layout-content">
+          {location.pathname !== '/detail-informasi' && <BreadcrumbComponent className="breadcrumb-container" />}
+          {location.pathname !== '/detail-informasi' && <Katalog />}
+
+          <Routes>
+            <Route path="/" element={<KontenKatalog />} />
+            <Route path="/tabel-katalog" element={<TabelKatalog />} />
+            <Route path="/detail-informasi" element={<><DetailInformasi /><DetailPage /></>} />
+          </Routes>
+        </Content>
+      </Layout>
+    </Layout>
   );
 };
+
 export default SiderComponent;

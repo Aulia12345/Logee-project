@@ -20,9 +20,12 @@ import map from './img/map-pin.png';
 import star from './img/star.png';
 import img2 from './img/img2.png';
 import chat from './img/chat.png';
-import starfilled from './img/starfilled.png'
+import starfilled from './img/starfilled.png';
+import checklist from './img/checklist.png';
+import gmap from './img/gmap.png';
+import foto from './img/foto.png'
 
 
 export {titik, logo,arrow, wa, down, avatar, book, left, right, person, price, truck, bookA, personA, priceA, truckA
-    ,truckIcon,img, map, star, img2, chat, starfilled
+    ,truckIcon,img, map, star, img2, chat, starfilled, checklist, gmap, foto
 }

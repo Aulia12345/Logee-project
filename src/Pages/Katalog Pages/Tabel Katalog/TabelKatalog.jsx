@@ -3,36 +3,7 @@ import './TabelKatalog.css';
 import { Card, Space, Button } from 'antd';
 import { starfilled, truckIcon } from "../../../assets/Assets";
 import ChatButton from "../../../Komponen/ChatButton/ChatButton";
-
-const cardData = [
-  {
-    id: 1,
-    title: "Trailer 20 feet",
-    estimation: "Estimasi pengiriman 2-6 hari",
-    provider: "Disediakan oleh shipper Indonesia",
-    rating: 4.8,
-    reviews: "(9rb+)",
-    price: "Rp 1.500.000"
-  },
-  {
-    id: 2,
-    title: "Truck 40 feet",
-    estimation: "Estimasi pengiriman 3-7 hari",
-    provider: "Disediakan oleh shipper Asia",
-    rating: 4.9,
-    reviews: "(5rb+)",
-    price: "Rp 2.000.000"
-  },
-  {
-    id: 3,
-    title: "Truck 40 feet",
-    estimation: "Estimasi pengiriman 3-7 hari",
-    provider: "Disediakan oleh shipper Asia",
-    rating: 4.9,
-    reviews: "(5rb+)",
-    price: "Rp 2.000.000"
-  },
-];
+import { cardData } from "./cardData";
 
 const TabelKatalog = () => {
   return (
@@ -42,7 +13,7 @@ const TabelKatalog = () => {
         {cardData.map((card) => (
           <Card
             key={card.id}
-            className="Card"
+            className="Card" 
             title={
               <div className="cardC">
                 <div className="Title">

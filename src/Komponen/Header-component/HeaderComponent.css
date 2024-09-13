@@ -1,3 +1,4 @@
+/* Global Styles */
 @font-face {
     font-family: 'Satoshi Black';
     src: url('../../assets/Satoshi_Complete/Fonts/OTF/Satoshi-Black.otf') format('opentype');
@@ -8,88 +9,182 @@
   body {
     font-family: 'Satoshi Black', sans-serif;
   }
-
+  
   .ant-layout-header {
     padding: 0;
   }
   
-
-.navbar{
+  .navbar {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
     padding: 0 2vw;
-}
-
-  .logo{
+  }
+  
+  .logo {
     display: flex;
-    justify-content: space-between !important;
+    justify-content: space-between;
     align-items: center;
-}
-
-.logeeLogo{
+  }
+  
+  .logeeLogo {
     display: flex;
-    justify-content: start;
     align-items: center;
-}
-
-.logee{
+  }
+  
+  .logee {
     padding-left: 20px;
     width: 11.2rem;
     height: 2.5rem;
-}
-
-.titik{
-    height: 2.5rem;
+  }
+  
+  .titik {
     width: 3.5rem;
-}
-
-.profil, .judul{
+    height: 2.5rem;
+  }
+  
+  .profilHeader {
+    display: flex;
+    gap: 30px;
+  }
+  
+  .profil,
+  .judul {
     display: flex;
     align-items: center;
-}
-
-.profil{
-    display: flex;
-    align-items: center;
+  }
+  
+  .profil {
     gap: 1.5vw;
-}
-
-.judul{
-    display: flex;
-    align-items: center;
+  }
+  
+  .judul {
     gap: 5px;
-}
-
-.judulLogo{
-    color: #FF5600; 
+  }
+  
+  .judulLogo {
+    color: #FF5600;
     font-size: 1rem;
     font-weight: 700;
-}
-
-.wa{
+  }
+  
+  .wa {
     background-color: #F4F4F5;
-    border-radius: 100%;
+    border-radius: 50%;
     padding: 5px;
     width: 2rem;
     height: 2rem;
     margin-top: 20px;
-}
-
-.profilHeader{
-    display: flex;
-    gap: 30px;
-}
-
-.avatar{
+  }
+  
+  .avatar {
     display: flex;
     align-items: center;
     gap: 10px;
     background: #F4F4F5;
     border-radius: 8vw;
-}
-
-.avaImg{
-        width: 2.5rem;
-        height: 2.5rem;
-}
-
-
+  }
+  
+  .avaImg {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  
+  /* Responsive Design */
+  
+  /* Tablets and larger screens (768px and above) */
+  @media (max-width: 1024px) {
+    .logee {
+      width: 9rem;
+      height: 2rem;
+    }
+  
+    .titik {
+      width: 3rem;
+      height: 2rem;
+    }
+  
+    .judulLogo {
+      font-size: 0.9rem;
+    }
+  
+    .wa {
+      width: 1.8rem;
+      height: 1.8rem;
+    }
+  
+    .avaImg {
+      width: 2rem;
+      height: 2rem;
+    }
+  }
+  
+  /* Small screens (up to 768px) */
+  @media (max-width: 768px) {
+    .navbar {
+      padding: 0 1.5vw;
+    }
+  
+    .logee {
+      width: 7.5rem;
+      height: 1.8rem;
+    }
+  
+    .titik {
+      width: 2.5rem;
+      height: 1.8rem;
+    }
+  
+    .judulLogo {
+      font-size: 0.8rem;
+    }
+  
+    .profilHeader {
+      gap: 20px;
+    }
+  
+    .wa {
+      width: 1.5rem;
+      height: 1.5rem;
+      margin-top: 15px;
+    }
+  
+    .avaImg {
+      width: 1.8rem;
+      height: 1.8rem;
+    }
+  }
+  
+  /* Mobile screens (up to 480px) */
+  @media (max-width: 480px) {
+    .navbar {
+      padding: 0 1vw;
+    }
+  
+    .logee {
+      width: 6rem;
+      height: 1.5rem;
+    }
+  
+    .titik {
+      width: 2rem;
+      height: 1.5rem;
+    }
+  
+    .judulLogo {
+      font-size: 0.7rem;
+    }
+  
+    .profilHeader {
+      gap: 10px;
+    }
+  
+    .wa {
+      width: 1.2rem;
+      height: 1.2rem;
+    }
+  
+    .avaImg {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+  }
+  
