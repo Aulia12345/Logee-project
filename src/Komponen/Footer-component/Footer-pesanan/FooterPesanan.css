@@ -35,4 +35,62 @@
     font-size: 1.4rem;
     line-height: 32px;
   }
+
+  /* Media Queries untuk Tablet */
+@media (max-width: 768px) {
+    .bayar {
+      justify-content: center;
+      flex-direction: column;
+      margin-top: 4vw;
+    }
+  
+    .totalBayar {
+      padding-right: 0;
+      margin-bottom: 2vw;
+    }
+  
+    .textBayar {
+      text-align: center;
+      font-size: 1.1rem;
+    }
+  
+    .harga {
+      font-size: 1.5rem;
+    }
+  
+    .buttonBayar {
+      width: 80%;
+      padding: 3vw;
+      font-size: 1.2rem;
+    }
+  }
+  
+  /* Media Queries untuk Smartphone */
+  @media (max-width: 480px) {
+    .bayar {
+      justify-content: center;
+      flex-direction: column;
+      margin-top: 6vw;
+    }
+  
+    .totalBayar {
+      padding-right: 0;
+      margin-bottom: 2vw;
+      text-align: center;
+    }
+  
+    .textBayar {
+      font-size: 1rem;
+    }
+  
+    .harga {
+      font-size: 1.3rem;
+    }
+  
+    .buttonBayar {
+      width: 100%;
+      padding: 3.5vw;
+      font-size: 1.1rem;
+    }
+  }
   
