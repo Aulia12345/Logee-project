@@ -4,6 +4,7 @@ import { Card, Col, Row } from 'antd';
 import { checklist, img, starfilled } from "../../assets/Assets";
 import { cardData } from "../Katalog Pages/Tabel Katalog/cardData";
 import DetailPage from "./DetailPage";
+import FooterPesanan from "../../Komponen/Footer-component/Footer-pesanan/FooterPesanan";
 
 const DetailInformasi = () => {
   const selectedCard = cardData.find((card) => card.id === 1);

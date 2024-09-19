@@ -1,4 +1,4 @@
-import { foto } from "../../../assets/Assets"
+import { foto, foto2 } from "../../../assets/Assets"
 
 export const cardData =[
     {
@@ -51,5 +51,44 @@ export const pengemudi =[
     pengemudi:'Lorem Ipsum',
     posisi:'Asistem Pengemudi',
     total:'360 pengiriman'
+  }
+]
+
+export const ulasan =[
+  {
+    id:1,
+    foto:foto2,
+    pengemudi:'Lorem Ipsum',
+    shipper:'Shipper Indo',
+    rating: 4.8,
+    reviews: "(9rb+)",
+    desc:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and"
+  },
+  {
+    id:2,
+    foto:foto2,
+    pengemudi:'Lorem Ipsum',
+    shipper:'Shipper Indo',
+    rating: 4.8,
+    reviews: "(9rb+)",
+    desc:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and"
+  },
+  {
+    id:3,
+    foto:foto2,
+    pengemudi:'Lorem Ipsum',
+    shipper:'Shipper Indo',
+    rating: 4.8,
+    reviews: "(9rb+)",
+     desc:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and"
+  },
+  {
+    id:4,
+    foto:foto2,
+    pengemudi:'Lorem Ipsum',
+    shipper:'Shipper Indo',
+    rating: 4.8,
+    reviews: "(9rb+)",
+     desc:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and"
   }
 ]

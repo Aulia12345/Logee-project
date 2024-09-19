@@ -2,47 +2,90 @@ import React, { useState } from "react";
 import { img, map, star, truckIcon } from "../../../assets/Assets";
 import { DownOutlined } from '@ant-design/icons';
 import { Dropdown, Space, Button, Form, Radio, Modal } from 'antd';
+import { useNavigate } from 'react-router-dom';
 import './Katalog.css';
 import { Rekomendasi } from "./Rekomendasi";
 
 const Katalog = () => {
+
+// State untuk menyimpan pilihan dari dropdown
+const [selectedVehicle, setSelectedVehicle] = useState('');
+const [asal, setAsal] = useState('');
+const [tujuan, setTujuan] = useState('');
+const [rekomendasiValues, setRekomendasiValues] = useState({});
+const [isModalVisible, setIsModalVisible] = useState(false);
+const navigate = useNavigate();
+
   const items = [
     {
       icon: <img src={truckIcon} alt="truck" />,
-      label: <a href="https://www.antgroup.com">Trailer 20 feet</a>,
+      label: "Trailer 20 feet",
       key: '0',
+      value:"Trailer 20 feet",
     },
     {
       icon: <img src={truckIcon} alt="truck" />,
-      label: <a href="https://www.aliyun.com">Trailer 30 feet</a>,
+      label: "Trailer 30 feet",
       key: '1',
+      value:"Trailer 30 feet",
     },
     {
       icon: <img src={truckIcon} alt="truck" />,
-      label: <a href="https://www.aliyun.com">Trailer 40 feet</a>,
+      label: "Trailer 40 feet",
       key: '2',
+      value:"Trailer 40 feet",
     },
   ];
 
-  const [asal, setAsal] = useState('');
-  const [tujuan, setTujuan] = useState('');
-  const [isModalVisible, setIsModalVisible] = useState(false);
+   // Fungsi untuk menangani perubahan pilihan dari dropdown
+   const handleMenuClick = (e) => {
+    const selectedItem = items.find(item => item.key === e.key);
+    if (selectedItem) {
+      setSelectedVehicle(selectedItem.value); // Set state dengan pilihan yang dipilih
+      console.log('Tipe Kendaraan yang dipilih:', selectedItem.value); // Tampilkan pilihan di console
+    }
+  };
+
+    const menu = {
+      items: items.map((item) => ({
+        label: (
+          <Space>
+            <img src={truckIcon} alt="truck" />
+            {item.label}
+          </Space>
+        ),
+        key: item.key,
+        onClick: handleMenuClick
+      })),
+    };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(`Asal: ${asal}, Tujuan: ${tujuan}`);
+
+    const formData = {
+      asal,
+      tujuan,
+      tipeKendaraan: selectedVehicle,
+      rekomendasi: rekomendasiValues, // Menyimpan hasil dari modal rekomendasi
+    };
+
+    console.log('Form submitted with data:', formData);
+    navigate('/tabel-katalog');
   };
+
+    // Fungsi untuk submit data rekomendasi dari modal
+    const onFinish = (values) => {
+      console.log('Rekomendasi values:', values);
+      setRekomendasiValues(values); // Simpan nilai rekomendasi ke state
+      setIsModalVisible(false); // Tutup modal
+    };
+  
 
   const showModal = () => {
     setIsModalVisible(true);
   };
 
   const handleCancel = () => {
-    setIsModalVisible(false);
-  };
-
-  const onFinish = (values) => {
-    console.log('Form values:', values);
     setIsModalVisible(false);
   };
 
@@ -88,14 +131,14 @@ const Katalog = () => {
           <label htmlFor="tipeKendaraan" className="labelI">Tipe Kendaraan</label>
           <div className="inputContainer">
             <Dropdown
+            menu={menu}
               overlayStyle={{ color: 'black' }}
-              menu={{ items }}
               trigger={['click']}
             >
               <a onClick={(e) => e.preventDefault()}>
                 <Space className="dropdownT">
                   <img src={truckIcon} alt="truck" />
-                  Pilih Armada
+                  {selectedVehicle ? selectedVehicle : 'Pilih Armada'}
                   <DownOutlined />
                 </Space>
               </a>

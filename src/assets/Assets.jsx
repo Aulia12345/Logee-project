@@ -23,9 +23,10 @@ import chat from './img/chat.png';
 import starfilled from './img/starfilled.png';
 import checklist from './img/checklist.png';
 import gmap from './img/gmap.png';
-import foto from './img/foto.png'
+import foto from './img/foto.png';
+import foto2 from './img/foto2.png'
 
 
 export {titik, logo,arrow, wa, down, avatar, book, left, right, person, price, truck, bookA, personA, priceA, truckA
-    ,truckIcon,img, map, star, img2, chat, starfilled, checklist, gmap, foto
+    ,truckIcon,img, map, star, img2, chat, starfilled, checklist, gmap, foto, foto2
 }

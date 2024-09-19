@@ -1,0 +1,38 @@
+
+  .bayar {
+    font-family: "Satoshi Light", sans-serif;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    border: 1px solid rgba(128, 128, 128, 0.2);
+    background-color: white;
+  }
+  
+  .totalBayar {
+    margin-right: 5vw;
+  }
+
+  .textBayar{
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  
+  .harga {
+    color: #FF5600;
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+  
+  .buttonBayar {
+    padding:3.5vw;
+    background: #FF5600;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-style: none;
+    border-radius: 0;
+    font-weight: 600;
+    font-size: 1.4rem;
+    line-height: 32px;
+  }
+  
