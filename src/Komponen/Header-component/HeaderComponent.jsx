@@ -12,6 +12,7 @@ const HeaderComponent = () => {
         position: "sticky",
         background: "#FFFFFF",
         minHeight: "7vw",
+        width:'100%'
       }}
     >
       <div className="navbar">

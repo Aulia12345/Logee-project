@@ -8,6 +8,7 @@
   
   body {
     font-family: 'Satoshi Black', sans-serif;
+    width: 100%;
   }
   
   .ant-layout-header {
