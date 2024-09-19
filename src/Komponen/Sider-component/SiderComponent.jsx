@@ -71,7 +71,7 @@ const SiderComponent = () => {
   <Routes>
     <Route path="/" element={<KontenKatalog />} />
     <Route path="/tabel-katalog" element={<TabelKatalog />} />
-    <Route path="/detail-informasi" element={<><DetailInformasi /><DetailPage /></>} />
+    <Route path="/tabel-katalog/detail-informasi" element={<><DetailInformasi /><DetailPage /></>} />
   </Routes>
 </Content>
 

@@ -42,7 +42,7 @@ const TabelKatalog = () => {
           >
             <Space className="CardB">
               <Button className="CardButton">Tanya Logee</Button>
-              <Button className="CardButton" href="/detail-informasi">Detail Information</Button>
+              <Button className="CardButton" href="/tabel-katalog/detail-informasi">Detail Information</Button>
             </Space>
           </Card>
         ))}
