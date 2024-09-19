@@ -66,7 +66,7 @@ const SiderComponent = () => {
         </Header>
         <Content className="layout-content">
   <BreadcrumbComponent className="breadcrumb-container" />
-  {location.pathname !== '/detail-informasi' && <Katalog />}
+  {location.pathname !== '/tabel-katalog/detail-informasi' && <Katalog />}
 
   <Routes>
     <Route path="/" element={<KontenKatalog />} />
