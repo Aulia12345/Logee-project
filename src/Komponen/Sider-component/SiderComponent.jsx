@@ -33,9 +33,9 @@ const SiderComponent = () => {
       label: <Link to="/tabel-katalog" className={isActive('/tabel-katalog') ? 'active-label' : 'default-label'}>Daftar Pengiriman</Link>,
     },
     {
-      key: '/',
-      icon: <img src={isActive('/') ? priceA : price} alt="invoice" />,
-      label: <Link to="/" className={isActive('/') ? 'active-label' : 'default-label'}>Daftar Invoice</Link>,
+      key: '',
+      icon: <img src={isActive('') ? priceA : price} alt="invoice" />,
+      label: <Link to="" className={isActive('') ? 'active-label' : 'default-label'}>Daftar Invoice</Link>,
     },
     {
       key: '/akun',
