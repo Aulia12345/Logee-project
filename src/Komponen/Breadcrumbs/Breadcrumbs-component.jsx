@@ -14,7 +14,7 @@ const breadcrumbConfig = {
     text: 'Daftar Pengiriman / Buat Daftar Pengiriman',
     logo: book,
   },
-  '/detail-informasi': {
+  '/invoice': {
     text: 'Daftar Invoice / List Daftar Invoice',
     logo: price,
   },

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { img, map, star, truckIcon } from "../../../assets/Assets";
 import { DownOutlined } from '@ant-design/icons';
-import { Dropdown, Space, Button, Form, Radio, Modal } from 'antd';
+import { Dropdown, Space, Button, Form, Radio, Modal, Table } from 'antd';
 import { useNavigate } from 'react-router-dom';
 import './Katalog.css';
 import { Rekomendasi } from "./Rekomendasi";
@@ -15,25 +15,29 @@ const [tujuan, setTujuan] = useState('');
 const [rekomendasiValues, setRekomendasiValues] = useState({});
 const [isModalVisible, setIsModalVisible] = useState(false);
 const navigate = useNavigate();
+const [filteredData, setFilteredData] = useState([]);
+
+// State untuk memeriksa apakah tombol "Cari Armada" telah diklik
+const [isSearchClicked, setIsSearchClicked] = useState(false);
 
   const items = [
     {
       icon: <img src={truckIcon} alt="truck" />,
-      label: "Trailer 20 feet",
+      label: "Truck",
       key: '0',
-      value:"Trailer 20 feet",
+      value:"Truck",
     },
     {
       icon: <img src={truckIcon} alt="truck" />,
-      label: "Trailer 30 feet",
+      label: "Van",
       key: '1',
-      value:"Trailer 30 feet",
+      value:"Van",
     },
     {
       icon: <img src={truckIcon} alt="truck" />,
-      label: "Trailer 40 feet",
+      label: "Bike",
       key: '2',
-      value:"Trailer 40 feet",
+      value:"Bike",
     },
   ];
 
@@ -70,7 +74,12 @@ const navigate = useNavigate();
     };
 
     console.log('Form submitted with data:', formData);
-    navigate('/tabel-katalog');
+   
+    // Hanya navigasikan ke "/tabel-katalog" jika tombol telah diklik
+    setIsSearchClicked(true);
+    if (asal && tujuan && selectedVehicle) {
+      navigate('/tabel-katalog');
+    }
   };
 
     // Fungsi untuk submit data rekomendasi dari modal
@@ -108,6 +117,7 @@ const navigate = useNavigate();
               onChange={(e) => setAsal(e.target.value)}
               className="input"
               placeholder="Masukkan Asal"
+              required
             />
           </div>
         </div>
@@ -123,6 +133,7 @@ const navigate = useNavigate();
               onChange={(e) => setTujuan(e.target.value)}
               className="input"
               placeholder="Masukkan Tujuan"
+              required
             />
           </div>
         </div>

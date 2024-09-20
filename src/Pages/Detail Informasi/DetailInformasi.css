@@ -52,8 +52,12 @@
   z-index: 3;
 }
 
-.cardC {
+.cardKUalifikasi {
   padding: 0;
+  display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: start;
 }
 
 /* Title and Card Styling */
@@ -103,12 +107,6 @@
   display: flex;
   align-items: center;
   gap: 5px;
-}
-
-/* Unordered List Styling */
-ul {
-  padding: 0;
-  margin: 0;
 }
 
 /* Description Container */

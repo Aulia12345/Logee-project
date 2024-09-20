@@ -29,7 +29,7 @@ const HeaderComponent = () => {
             </div>
 
             <div className="profil">
-              <a href="s">
+              <a href="https://wa.me/085646336283">
                 <img className="wa" src={wa} alt="WhatsApp" />
               </a>
               <span className="avatar">

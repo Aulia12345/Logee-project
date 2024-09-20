@@ -5,7 +5,6 @@ import LayoutComponent from './Komponen/Layout/Layout'; // Import LayoutComponen
 import DetailInformasi from './Pages/Detail Informasi/DetailInformasi';
 import DetailPage from './Pages/Detail Informasi/DetailPage';
 import TabelKatalog from './Pages/Katalog Pages/Tabel Katalog/TabelKatalog';
-import Katalog from './Komponen/Form/Form Katalog/Katalog';
 import KontenKatalog from './Pages/Katalog Pages/Konten Katalog/KontenKatalog';
 
 const App = () => {

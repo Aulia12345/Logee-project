@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import './DetailInformasi.css';
-import { gmap, starfilled, truckA } from "../../assets/Assets";
+import { foto, foto2, gmap, starfilled, truckA } from "../../assets/Assets";
 import { Card, Row, Col, Space, Button } from "antd";
 import ChatButton from "../../Komponen/ChatButton/ChatButton";
 import FooterPesanan from "../../Komponen/Footer-component/Footer-pesanan/FooterPesanan";
@@ -61,6 +61,9 @@ const DetailPage = () => {
                 <Row className="review-row">
                   <Col lg={6} md={8} xs={12} className="review-col">
                     <div className="review-content">
+                      <div className="circle-frame frame2">
+                        <img className="circle-img" src={foto} alt="" />
+                      </div>
                       <div className="review-info">
                         <p className="driver-name">{review.name}</p>
                         <div className="shipper-info">
@@ -98,6 +101,9 @@ const DetailPage = () => {
                 <div className="pengemudiCard">
                   {detailData.drivers.map((driver, index) => (
                     <div key={index} className="pengemudi-card">
+                      <div className="circle-frame">
+                      <img className="circle-img" src={foto2} alt="" />
+                      </div>
                       <div className="pengemudi-info">
                         <p className="pengemudi-name">{driver.name}</p>
                         <p className="pengemudi-position">{driver.role} | {driver.delivery} deliveries</p>
