@@ -171,7 +171,7 @@ const [isSearchClicked, setIsSearchClicked] = useState(false);
             onCancel={handleCancel}
           >
             <h1 className="judulRekom">Isi Rekomendasi Untuk Pengiriman Terbaik!</h1>
-            <Form onFinish={onFinish}>
+            <Form  onFinish={onFinish}>
               {Rekomendasi.map((item) => (
                 <Form.Item key={item.id} name={`radioOption${item.id}`}>
                   <Space className="radio" direction="vertical">

@@ -1,4 +1,8 @@
 
+.sider{
+  border: none;
+}
+
 /* Active label class for the selected menu item */
 .active-label {
   font-weight: bold;

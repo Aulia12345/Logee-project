@@ -107,6 +107,11 @@
 
 .judulRekom {
   text-align: center;
+  font-size: 1.5rem;
+}
+
+.rekomendasi{
+  width: 1000px;
 }
 
 .radio {
@@ -154,6 +159,11 @@
   .formContainer{
     left: 50vw;
   }
+
+  .inputContainer{
+    width: 100%;
+  }
+
   .inputGroup {
     width: 20vw;
   }

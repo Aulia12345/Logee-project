@@ -49,7 +49,7 @@ const SiderComponent = () => {
 
   return (
     <Layout>
-      <Sider trigger={null} collapsible collapsed={collapsed}>
+      <Sider className='sider' trigger={null} collapsible collapsed={collapsed}>
         <Menu
           className="sider-menu"
           theme="light"
