@@ -9,13 +9,12 @@ import { Rekomendasi } from "./Rekomendasi";
 const Katalog = () => {
 
 // State untuk menyimpan pilihan dari dropdown
-const [selectedVehicle, setSelectedVehicle] = useState('');
-const [asal, setAsal] = useState('');
-const [tujuan, setTujuan] = useState('');
+const [vehicleType, setVehicleType] = useState('');
+const [origin, setOrigin] = useState('');
+const [destination, setDestination] = useState('');
 const [rekomendasiValues, setRekomendasiValues] = useState({});
 const [isModalVisible, setIsModalVisible] = useState(false);
 const navigate = useNavigate();
-const [filteredData, setFilteredData] = useState([]);
 
 // State untuk memeriksa apakah tombol "Cari Armada" telah diklik
 const [isSearchClicked, setIsSearchClicked] = useState(false);
@@ -45,7 +44,7 @@ const [isSearchClicked, setIsSearchClicked] = useState(false);
    const handleMenuClick = (e) => {
     const selectedItem = items.find(item => item.key === e.key);
     if (selectedItem) {
-      setSelectedVehicle(selectedItem.value); // Set state dengan pilihan yang dipilih
+      setVehicleType(selectedItem.value); // Set state dengan pilihan yang dipilih
       console.log('Tipe Kendaraan yang dipilih:', selectedItem.value); // Tampilkan pilihan di console
     }
   };
@@ -67,9 +66,9 @@ const [isSearchClicked, setIsSearchClicked] = useState(false);
     e.preventDefault();
 
     const formData = {
-      asal,
-      tujuan,
-      tipeKendaraan: selectedVehicle,
+      origin,
+      destination,
+      tipeKendaraan: vehicleType,
       rekomendasi: rekomendasiValues, // Menyimpan hasil dari modal rekomendasi
     };
 
@@ -77,7 +76,7 @@ const [isSearchClicked, setIsSearchClicked] = useState(false);
    
     // Hanya navigasikan ke "/tabel-katalog" jika tombol telah diklik
     setIsSearchClicked(true);
-    if (asal && tujuan && selectedVehicle) {
+    if (origin && destination && vehicleType) {
       navigate('/tabel-katalog');
     }
   };
@@ -112,9 +111,9 @@ const [isSearchClicked, setIsSearchClicked] = useState(false);
             <img src={map} className="icon" alt="map" />
             <input
               type="text"
-              id="asal"
-              value={asal}
-              onChange={(e) => setAsal(e.target.value)}
+              id="origin"
+              value={origin}
+              onChange={(e) => setOrigin(e.target.value)}
               className="input"
               placeholder="Masukkan Asal"
               required
@@ -128,9 +127,9 @@ const [isSearchClicked, setIsSearchClicked] = useState(false);
             <img src={map} className="icon" alt="map" />
             <input
               type="text"
-              id="tujuan"
-              value={tujuan}
-              onChange={(e) => setTujuan(e.target.value)}
+              id="destination"
+              value={destination}
+              onChange={(e) => setDestination(e.target.value)}
               className="input"
               placeholder="Masukkan Tujuan"
               required
@@ -149,7 +148,7 @@ const [isSearchClicked, setIsSearchClicked] = useState(false);
               <a onClick={(e) => e.preventDefault()}>
                 <Space className="dropdownT">
                   <img src={truckIcon} alt="truck" />
-                  {selectedVehicle ? selectedVehicle : 'Pilih Armada'}
+                  {vehicleType ? vehicleType : 'Pilih Armada'}
                   <DownOutlined />
                 </Space>
               </a>
@@ -179,8 +178,8 @@ const [isSearchClicked, setIsSearchClicked] = useState(false);
                     <label>{item.soal}</label>
                     <Radio.Group className="custom-radio">
                       <Space direction="vertical">
-                        <Radio value="Yes">Yes</Radio>
-                        <Radio value="No">No</Radio>
+                        <Radio value="true">Yes</Radio>
+                        <Radio value="false">No</Radio>
                       </Space>
                     </Radio.Group>
                   </Space>
