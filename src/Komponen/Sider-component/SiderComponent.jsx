@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { book, truck, price, person, left, right, bookA, truckA, priceA, personA } from '../../assets/Assets';
 import { Button, Layout, Menu } from 'antd';
 import { Link, useLocation, Routes, Route } from 'react-router-dom';
+import { matchPath } from 'react-router-dom';
 
 import './SiderComponent.css';
 import BreadcrumbComponent from '../Breadcrumbs/Breadcrumbs-component';
@@ -16,6 +17,8 @@ const { Header, Sider, Content } = Layout;
 const SiderComponent = () => {
   const [collapsed, setCollapsed] = useState(false);
   const location = useLocation();
+
+  const isDetailPage = matchPath("/tabel-katalog/detail-informasi/:id", location.pathname);
 
   // Helper function to determine if a path is active
   const isActive = (path) => location.pathname === path;
@@ -66,12 +69,12 @@ const SiderComponent = () => {
         </Header>
         <Content className="layout-content">
   <BreadcrumbComponent className="breadcrumb-container" />
-  {location.pathname !== '/tabel-katalog/detail-informasi' && <Katalog />}
+  {!isDetailPage && <Katalog />}
 
   <Routes>
     <Route path="/" element={<KontenKatalog />} />
     <Route path="/tabel-katalog" element={<TabelKatalog />} />
-    <Route path="/tabel-katalog/detail-informasi" element={<><DetailInformasi /><DetailPage /></>} />
+    <Route path="/tabel-katalog/detail-informasi/:id" element={<><DetailInformasi /><DetailPage /></>} />
   </Routes>
 </Content>
 

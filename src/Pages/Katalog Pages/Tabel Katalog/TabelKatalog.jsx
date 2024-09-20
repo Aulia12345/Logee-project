@@ -1,18 +1,59 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import './TabelKatalog.css';
 import { Card, Space, Button } from 'antd';
 import { starfilled, truckIcon } from "../../../assets/Assets";
 import ChatButton from "../../../Komponen/ChatButton/ChatButton";
-import { cardData } from "./cardData";
+import axios from 'axios';
 
 const TabelKatalog = () => {
+  const [mappedData, setMappedData] = useState([]);
+
+  useEffect(() => {
+    const fetchCardData = async () => {
+      try {
+        const response = await axios.get('https://api-logee.vercel.app/catalogs');
+        const data = response.data.map(item => ({
+          id: item._id,
+          route: `${item.origin} to ${item.destination}`,
+          vehicleType: item.vehicleType,
+          isFrozen: item.isFrozen ? 'Yes' : 'No',
+          weightCapacity: item.weightCapacity,
+          estimatedTime: item.estimatedTime,
+          vendor: item.vendor,
+          rating: item.rating,
+          description: item.desc,
+          specs: item.specs.join(', '),
+          reviews: item.reviews.map(review => ({
+            reviewer: review.name,
+            comment: review.review
+          })),
+          drivers: item.drivers.map(driver => ({
+            driverName: driver.name,
+            role: driver.role,
+            deliveries: driver.delivery
+          })),
+          prices: item.prices.map(price => `${price.name}: Rp ${price.price}`),
+          totalPrice: item.prices.reduce((acc, price) => acc + price.price, 0), 
+          rating: item.rating, // Assuming this field exists in the response
+          review: item.reviews // Assuming this field exists in the response
+        }));
+
+        setMappedData(data); // Set the transformed data
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+
+    fetchCardData();
+  }, []);
+
   return (
     <div className="tabelKatalog">
       <h1 className="h1Card">PILIH ARMADA PENGIRIMAN</h1>
       <Space direction="vertical" size={16}>
-        {cardData.map((card) => (
+        {mappedData.map((item) => (
           <Card
-            key={card.id}
+            key={item.id} // Using id as the unique key
             className="Card" 
             title={
               <div className="cardC">
@@ -20,34 +61,39 @@ const TabelKatalog = () => {
                   <div className="title">
                     <span className="title1">
                       <img src={truckIcon} alt="" />
-                      <p className="pTitle1">{card.title}</p>
+                      <p className="pTitle1">{item.vehicleType}</p>
                     </span>
-                    <p className="pTitle1-2">{card.estimation}</p>
+                    <p className="pTitle1-2">Estimasi pengiriman: {item.estimatedTime}</p>
                   </div>
 
                   <div className="subTitle">
-                    <p className="title2">{card.provider} | </p>
+                    <p className="title2">{item.vendor} | </p>
                     <span className="pTitle2">
                       <img src={starfilled} alt="" />
-                      <p><b>{card.rating}</b></p>
-                      <p className="pTitle2-2">{card.reviews}</p>
+                      <p>
+                        <b>
+                          {item.rating}
+                        </b>
+                      </p>
+                      <p className="pTitle2-2">({item.review.length} reviews)</p>
                     </span>
                   </div>
                 </div>
-                <p className="priceTitle">{card.price}</p>
+                
+                <p className="priceTitle">Rp {item.totalPrice}</p>
               </div>
             }
             style={{ minWidth: '80vw' }}
-            hoverable='true'
+            hoverable={true}
           >
             <Space className="CardB">
               <Button className="CardButton">Tanya Logee</Button>
-              <Button className="CardButton" href="/tabel-katalog/detail-informasi">Detail Information</Button>
+              <Button className="CardButton" href={`/tabel-katalog/detail-informasi/${item.id}`}>Detail Information</Button>
             </Space>
           </Card>
         ))}
       </Space>
-      <ChatButton/>
+      <ChatButton />
     </div>
   );
 };
