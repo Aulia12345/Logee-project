@@ -11,6 +11,7 @@ import KontenKatalog from '../../Pages/Katalog Pages/Konten Katalog/KontenKatalo
 import TabelKatalog from '../../Pages/Katalog Pages/Tabel Katalog/TabelKatalog';
 import DetailInformasi from '../../Pages/Detail Informasi/DetailInformasi';
 import DetailPage from '../../Pages/Detail Informasi/DetailPage';
+import BuatPesanan from '../../Pages/Buat Pesanan/BuatPesanan';
 
 const { Header, Sider, Content } = Layout;
 
@@ -18,7 +19,7 @@ const SiderComponent = () => {
   const [collapsed, setCollapsed] = useState(false);
   const location = useLocation();
 
-  const isDetailPage = matchPath("/tabel-katalog/detail-informasi/:id", location.pathname);
+  const isDetailPage = matchPath("/tabel-katalog/detail-informasi/:id" && "/buat-pesanan", location.pathname);
 
   // Helper function to determine if a path is active
   const isActive = (path) => location.pathname === path;
@@ -75,6 +76,7 @@ const SiderComponent = () => {
     <Route path="/" element={<KontenKatalog />} />
     <Route path="/tabel-katalog" element={<TabelKatalog />} />
     <Route path="/tabel-katalog/detail-informasi/:id" element={<><DetailInformasi /><DetailPage /></>} />
+    <Route path='buat-pesanan' element={<BuatPesanan/>}/>
   </Routes>
 </Content>
 

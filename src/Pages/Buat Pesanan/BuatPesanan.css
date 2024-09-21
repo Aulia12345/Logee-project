@@ -1,0 +1,231 @@
+@font-face {
+    font-family: 'Satoshi Light';
+    src: url('../../assets/Satoshi_Complete/Fonts/WEB/fonts/Satoshi-Light.woff2') format('woff2'),
+         url('../../assets/Satoshi_Complete/Fonts/WEB/fonts/Satoshi-Light.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Satoshi Black';
+    src: url('../../assets/Satoshi_Complete/Fonts/WEB/fonts/Satoshi-Black.woff2') format('woff2'),
+         url('../../assets/Satoshi_Complete/Fonts/WEB/fonts/Satoshi-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+  }
+  
+  .pesanan {
+    background: white;
+  }
+  
+  .gmap2 {
+    background: #ff5600;
+    width: 100%;
+    padding: 1.8vw 3vw;
+  }
+  
+  .judulPesanan {
+    font-family: "Satoshi Black", sans-serif;
+  }
+  
+  .formPesanan {
+    padding: 1vw 3vw;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap; /* Make it responsive */
+  }
+  
+  .inputan {
+    width: 30vw;
+    height: 3vw;
+    gap: 0;
+    border: 1px solid transparent;
+    border-color: #D1D1D6;
+    border-radius: 5px;
+  }
+  
+  .textArea {
+    width: 30vw;
+  }
+  
+  .namaItem {
+    font-family: "Satoshi Light", sans-serif;
+  }
+  
+  .labelForm {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    font-family: "Satoshi Light", sans-serif;
+    font-weight: bold;
+    padding-bottom: 10px;
+  }
+  
+  .modalForm {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #D1D1D6;
+    width: 30vw;
+    height: 5vw;
+  }
+  
+  .voucher {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border: 1.5px solid transparent;
+    border-color: #D1D1D6;
+    padding: 0.5vw 2vw;
+  }
+  
+  .voucher-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2vw;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+  }
+  
+  .iconV {
+    width: 2.5vw;
+    height: 2vw;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .descV {
+    padding: 0;
+    margin: 0;
+  }
+  
+  .desc1 {
+    font-size: 1.3rem;
+    font-family: "Satoshi Black", sans-serif;
+  }
+  
+  .desc2 {
+    font-family: "Satoshi Light", sans-serif;
+  }
+  
+  p {
+    margin: 0;
+  }
+  
+  .buttonV {
+    color: white;
+    background: #ff5600;
+    padding: 0.3vw 1vw;
+    border-radius: 3px;
+    border-style: none;
+  }
+  
+  .buttonV:hover {
+    cursor: pointer;
+  }
+  
+  .kembaliB {
+    font-weight: 500;
+    font-size: 2rem;
+    color: white;
+    background: #FF6F26;
+    padding: 2.5vw 8vw;
+  }
+  
+  .kembaliB:hover {
+    cursor: pointer;
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 2vw;
+  }
+  
+  .Button {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .back, .next {
+    padding: 2vw 3.5vw;
+    font-size: 1.3rem;
+  }
+  
+  .back {
+    color: gray;
+  }
+  
+  .next {
+    color: white;
+    background: #ff5600;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 1200px) {
+    .inputan, .textArea {
+      width: 45vw;
+    }
+    
+    .modalForm, .voucher-content {
+      width: 45vw;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .inputan, .textArea {
+      width: 80vw;
+    }
+    
+    .modalForm, .voucher-content {
+      width: 80vw;
+    }
+  
+    .desc1 {
+      font-size: 1.1rem;
+    }
+  
+    .iconV {
+      width: 5vw;
+      height: 4vw;
+    }
+  
+    .kembaliB {
+      padding: 5vw 12vw;
+      font-size: 1.5rem;
+    }
+  
+    .back, .next {
+      padding: 3vw 5vw;
+      font-size: 1.1rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .formPesanan {
+      padding: 3vw;
+      flex-direction: column;
+      justify-content: center;
+    }
+  
+    .inputan, .textArea {
+      width: 90vw;
+    }
+    
+    .modalForm, .voucher-content {
+      width: 90vw;
+    }
+  
+    .kembaliB {
+      padding: 6vw 10vw;
+      font-size: 1.2rem;
+    }
+  
+    .back, .next {
+      padding: 4vw 6vw;
+      font-size: 1rem;
+    }
+  }
+  

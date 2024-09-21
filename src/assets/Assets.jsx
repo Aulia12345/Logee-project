@@ -26,9 +26,13 @@ import gmap from './img/gmap.png';
 import foto from './img/foto.png';
 import foto2 from './img/foto2.png';
 import chat2 from './img/chat2.png';
-import plane from './img/plane.png'
-
+import plane from './img/plane.png';
+import gmap2 from './img/gmap2.png';
+import diskon from './img/diskon.png';
+import diskon2 from './img/diskon2.png';
+import diskon3 from './img/diskon3.png'
 
 export {titik, logo,arrow, wa, down, avatar, book, left, right, person, price, truck, bookA, personA, priceA, truckA
-    ,truckIcon,img, map, star, img2, chat, starfilled, checklist, gmap, foto, foto2, chat2, plane
+    ,truckIcon,img, map, star, img2, chat, starfilled, checklist, gmap, foto, foto2, chat2, plane, gmap2, diskon,diskon2,
+diskon3
 }
