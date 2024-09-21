@@ -33,11 +33,10 @@ const TabelKatalog = () => {
             deliveries: driver.delivery
           })),
           prices: item.prices.map(price => `${price.name}: Rp ${price.price}`),
-          totalPrice: item.prices.reduce((acc, price) => acc + price.price, 0), 
+          totalPrice: item.prices.find(p => p.name === 'Total')?.price || 0, 
           rating: item.rating, // Assuming this field exists in the response
           review: item.reviews // Assuming this field exists in the response
         }));
-
         setMappedData(data); // Set the transformed data
       } catch (error) {
         console.error('Error fetching data:', error);
