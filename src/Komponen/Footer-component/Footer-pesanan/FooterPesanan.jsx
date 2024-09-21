@@ -9,9 +9,11 @@ const FooterPesanan =()=>{
   <p className="textBayar">Total Pembayaran</p>
   <p className="harga">Rp 190.000</p>
   </div>
+  <a href="/buat-pesanan">
 <Button className="buttonBayar">
   Buat Pesanan
 </Button>
+</a>
 </div>
     )
 };

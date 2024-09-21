@@ -4,12 +4,19 @@ import './BuatPesanan.css';
 import { Form, Input, Modal, Button, Row, Col } from "antd";
 import { RightOutlined } from "@ant-design/icons";
 import { Voucher } from "./Voucher";
+import { useNavigate } from 'react-router-dom';
 
 const BuatPesanan = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const showModal = () => setIsModalOpen(true);
   const handleCancel = () => setIsModalOpen(false);
+
+  const navigate = useNavigate();
+   // Function to go back to the previous page
+   const handleBack = () => {
+    navigate(-1); // This goes back to the previous page in history
+  };
 
   return (
     <div className="pesanan">
@@ -90,7 +97,7 @@ const BuatPesanan = () => {
             </Form.Item>
 
             <div className="Button">
-                <Button className="back">Kembali</Button>
+                <Button onClick={handleBack} className="back">Kembali</Button>
                 <Button className="next" disabled={isModalOpen}>Selanjutnya</Button>
             </div>
           </Form>
