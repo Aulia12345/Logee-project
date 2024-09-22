@@ -21,23 +21,23 @@ const [isSearchClicked, setIsSearchClicked] = useState(false);
 
   const items = [
     {
-      icon: <img src={truckIcon} alt="truck" />,
-      label: "Truck",
-      key: '0',
-      value:"Truck",
-    },
-    {
-      icon: <img src={truckIcon} alt="truck" />,
-      label: "Van",
-      key: '1',
-      value:"Van",
-    },
-    {
-      icon: <img src={truckIcon} alt="truck" />,
-      label: "Bike",
-      key: '2',
-      value:"Bike",
-    },
+        icon: <img src={truckIcon} alt="truck" />,
+        label: "Trailer 20 Feet",
+        key: "0",
+        value: "Trailer 20 Feet",
+      },
+      {
+        icon: <img src={truckIcon} alt="truck" />,
+        label: "Trailer 30 Feet",
+        key: "1",
+        value: "Trailer 30 Feet",
+      },
+      {
+        icon: <img src={truckIcon} alt="truck" />,
+        label: "Trailer 40 Feet",
+        key: "2",
+        value: "Trailer 40 Feet",
+      },
   ];
 
    // Fungsi untuk menangani perubahan pilihan dari dropdown
@@ -77,7 +77,7 @@ const [isSearchClicked, setIsSearchClicked] = useState(false);
     // Hanya navigasikan ke "/tabel-katalog" jika tombol telah diklik
     setIsSearchClicked(true);
     if (origin && destination && vehicleType) {
-      navigate('/tabel-katalog');
+        navigate("/tabel-katalog", { state: formData });
     }
   };
 

@@ -4,14 +4,20 @@ import { Card, Space, Button } from 'antd';
 import { starfilled, truckIcon } from "../../../assets/Assets";
 import ChatButton from "../../../Komponen/ChatButton/ChatButton";
 import axios from 'axios';
+import { useLocation } from "react-router-dom";
 
 const TabelKatalog = () => {
+    const location = useLocation();
+  const { state } = location || {};
+  const { origin, destination, tipeKendaraan, rekomendasi } = state || {};
   const [mappedData, setMappedData] = useState([]);
 
   useEffect(() => {
     const fetchCardData = async () => {
       try {
-        const response = await axios.get('https://api-logee.vercel.app/catalogs');
+        const response = await axios.get(
+            `https://api-logee.vercel.app/catalogs?origin=${origin}&destination=${destination}&vehicleType=${tipeKendaraan}&isFrozen=${rekomendasi.radioOption1}&isMoreThanTons=${rekomendasi.radioOption2}&isMoreThan3Days=${rekomendasi.radioOption3}&isFragile=${rekomendasi.radioOption4}`
+        );
         const data = response.data.map(item => ({
           id: item._id,
           route: `${item.origin} to ${item.destination}`,
