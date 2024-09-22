@@ -77,7 +77,7 @@ const [isSearchClicked, setIsSearchClicked] = useState(false);
     // Hanya navigasikan ke "/tabel-katalog" jika tombol telah diklik
     setIsSearchClicked(true);
     if (origin && destination && vehicleType) {
-      navigate('/tabel-katalog');
+        navigate("/tabel-katalog", { state: formData });
     }
   };
 
