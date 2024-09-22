@@ -6,6 +6,7 @@ import DetailInformasi from './Pages/Detail Informasi/DetailInformasi';
 import DetailPage from './Pages/Detail Informasi/DetailPage';
 import TabelKatalog from './Pages/Katalog Pages/Tabel Katalog/TabelKatalog';
 import KontenKatalog from './Pages/Katalog Pages/Konten Katalog/KontenKatalog';
+import BuatPesanan from './Pages/Buat Pesanan/BuatPesanan';
 
 const App = () => {
 
@@ -18,6 +19,7 @@ const App = () => {
       <Route path="/" element={<KontenKatalog />} />
       <Route path="/tabel-katalog" element={<TabelKatalog />} />
       <Route path="/tabel-katalog/detail-informasi/:id" element={<><DetailInformasi /><DetailPage /></>} />
+      <Route path='/buat-pesanan' element={<BuatPesanan/>}/>
     </Routes>
     </LayoutComponent>
   </div>
