@@ -9,6 +9,7 @@ import BreadcrumbComponent from '../Breadcrumbs/Breadcrumbs-component';
 import Katalog from '../Form/Form Katalog/Katalog';
 import KontenKatalog from '../../Pages/Katalog Pages/Konten Katalog/KontenKatalog';
 import TabelKatalog from '../../Pages/Katalog Pages/Tabel Katalog/TabelKatalog';
+import TabelFilter from '../../Pages/Katalog Pages/Filter/TabelFilter';
 import DetailInformasi from '../../Pages/Detail Informasi/DetailInformasi';
 import DetailPage from '../../Pages/Detail Informasi/DetailPage';
 import BuatPesanan from '../../Pages/Buat Pesanan/BuatPesanan';
@@ -75,6 +76,7 @@ const SiderComponent = () => {
 
   <Routes>
     <Route path="/" element={<KontenKatalog />} />
+    <Route path="/filter" element={<TabelFilter />} />
     <Route path="/tabel-katalog" element={<TabelKatalog />} />
     <Route path="/tabel-katalog/detail-informasi/:id" element={<><DetailInformasi /><DetailPage /></>} />
     <Route path='/buat-pesanan' element={<BuatPesanan/>}/>
