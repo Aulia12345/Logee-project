@@ -1,9 +1,16 @@
 .breadcrumbC{
-    padding-left: 1vw;
+    padding-left: 2vw;
+    padding-top: 1vw;
+    padding-bottom: 1vw;
     display: flex;
     align-items: center;
     background-color: white;
   }
+
+.breadcrumb-logo {
+  margin-right: 0.5rem;
+  vertical-align: middle;
+}
 
 .default-label {
     color: black; /* Warna label default */
@@ -13,4 +20,8 @@
     color: #ff5600 !important; /* Ganti dengan warna aktif, misalnya biru */
   }
 
-  
+@media (max-width: 480px) {
+  .breadcrumbC {
+    font-size: x-small;
+  }
+}

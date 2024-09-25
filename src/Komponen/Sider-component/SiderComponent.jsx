@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { book, truck, price, person, left, right, bookA, truckA, priceA, personA } from '../../assets/Assets';
-import { Button, Layout, Menu } from 'antd';
+import { Button, Layout, Menu, Grid } from 'antd';
 import { Link, useLocation, Routes, Route } from 'react-router-dom';
 import { matchPath } from 'react-router-dom';
+const { useBreakpoint } = Grid;
 
 import './SiderComponent.css';
 import BreadcrumbComponent from '../Breadcrumbs/Breadcrumbs-component';
@@ -18,6 +19,7 @@ const { Header, Sider, Content } = Layout;
 
 const SiderComponent = () => {
   const [collapsed, setCollapsed] = useState(false);
+  const screens = useBreakpoint();
   const location = useLocation();
 
   const isDetailPage = matchPath("/tabel-katalog/detail-informasi/:id", location.pathname);
@@ -52,7 +54,7 @@ const SiderComponent = () => {
 
   return (
     <Layout>
-      <Sider className='sider' trigger={null} collapsible collapsed={collapsed}>
+      <Sider className='sider' trigger={null} collapsible collapsed={screens.xs ? true : collapsed}>
         <Menu
           className="sider-menu"
           theme="light"
@@ -64,11 +66,13 @@ const SiderComponent = () => {
 
       <Layout>
         <Header className="layout-header">
-          <Button
-            className="sider-toggle-button"
-            icon={collapsed ? <img src={right} alt="Expand" /> : <img src={left} alt="Collapse" />}
-            onClick={() => setCollapsed(!collapsed)}
-          />
+        {!screens.xs && (
+            <Button
+              className="sider-toggle-button"
+              icon={collapsed ? <img src={right} /> : <img src={left} />}
+              onClick={() => setCollapsed(!collapsed)}
+            />
+          )}
         </Header>
         <Content className="layout-content">
   <BreadcrumbComponent className="breadcrumb-container" />

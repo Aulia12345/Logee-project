@@ -22,8 +22,9 @@
   border-radius: 100%;
   border-width: 1px;
   border-color: rgba(187, 187, 187, 0.3);
-  margin-left: -1vw;
+  margin-left: -20px;
   background-color: white; /* Pastikan latar belakang tetap putih */
+  top: -25px;
 }
 
 /* Style for the Sider menu */
@@ -35,7 +36,7 @@
 /* Styling for the layout header */
 .layout-header {
   padding: 0;
-  background-color: white;
+  height: 0;
 }
 
 /* Style for the layout content */
