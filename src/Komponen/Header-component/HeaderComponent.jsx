@@ -11,7 +11,7 @@ const HeaderComponent = () => {
       style={{
         position: "sticky",
         background: "#FFFFFF",
-        minHeight: "7vw",
+        Height: "7vw",
         width:'100%'
       }}
     >
@@ -29,14 +29,12 @@ const HeaderComponent = () => {
             </div>
 
             <div className="profil">
-              <a href="https://wa.me/085646336283">
-                <img className="wa" src={wa} alt="WhatsApp" />
+              <a className="wa" href="https://wa.me/085646336283">
+                <img className="img-wa" src={wa} alt="WhatsApp" />
               </a>
               <span className="avatar">
                 <img className="avaImg" src={avatar} alt="avatar" />
-                <a href="https://www.example.com">
-                  <img className="down" src={down} alt="dropdown icon" />
-                </a>
+                <img className="down" src={down} alt="dropdown icon" />
               </span>
             </div>
           </div>

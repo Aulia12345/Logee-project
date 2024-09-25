@@ -67,13 +67,17 @@
     font-weight: 700;
   }
   
-  .wa {
+.wa {
+  align-items: center;
+  display: flex;
+}
+
+  .img-wa {
     background-color: #F4F4F5;
     border-radius: 50%;
     padding: 5px;
     width: 2rem;
     height: 2rem;
-    margin-top: 20px;
   }
   
   .avatar {
@@ -107,7 +111,7 @@
       font-size: 0.9rem;
     }
   
-    .wa {
+    .img-wa {
       width: 1.8rem;
       height: 1.8rem;
     }
@@ -142,10 +146,9 @@
       gap: 20px;
     }
   
-    .wa {
+    .img-wa {
       width: 1.5rem;
-      height: 1.5rem;
-      margin-top: 15px;
+      height: 1.5rem; 
     }
   
     .avaImg {
@@ -171,14 +174,14 @@
     }
   
     .judulLogo {
-      font-size: 0.7rem;
+      font-size: 0.5rem;
     }
   
     .profilHeader {
       gap: 10px;
     }
   
-    .wa {
+    .img-wa {
       width: 1.2rem;
       height: 1.2rem;
     }
